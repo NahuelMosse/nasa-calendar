@@ -2,7 +2,7 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "eqeqeq": "error",
-    "quotes": ["error", "single"],
+    "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "indent": ["error", 4]
   }

@@ -1,9 +1,9 @@
-import Calendar from './components/calendar';
+import Calendar from "../components/calendar";
 
-export default function Home() {
+export default function Home(): JSX.Element {
 
     return (
-        <main>
+        <main className="h-full flex items-center justify-center">
             <Calendar></Calendar>
         </main>
     );
