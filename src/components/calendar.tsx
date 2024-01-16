@@ -17,13 +17,28 @@ export default async function Calendar(): Promise<JSX.Element> {
     const today = new Date();
     const firstMonthDay = new Date(today.getFullYear(), today.getMonth(), 1);
     const monthDays = getMonthDays();
-    const weekDays = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+    const weekDaysMobile = ["Dom.", "Lun.", "Mar.", "Mie.", "Jue.", "Vie.", "Sab."];
 
     return (
-        <div className="border border-current p-6 rounded-lg">
-            <div className="grid grid-cols-7 gap-4">
+        <div className="w-full flex flex-col gap-4">
+            <header className="w-full flex justify-center gap-8 text-2xl">
+                <button
+                    className="flex items-center justify-center hover:bg-black/10 rounded-full w-8 h-8 rotate-180 pb-1"
+                >
+                    ↣
+                </button>
+                <h2>
+                    Enero
+                </h2>
+                <button 
+                    className="flex items-center justify-center hover:bg-black/10 rounded-full w-8 h-8 pb-1"
+                >
+                    ↣
+                </button>
+            </header>
+            <div className="grid grid-cols-7 md:gap-4 sm:gap-2 gap-0">
                 {
-                    weekDays.map(day => 
+                    weekDaysMobile.map(day => 
                         <HeaderDay key={day}>{day}</HeaderDay>
                     )
                 }
@@ -32,8 +47,7 @@ export default async function Calendar(): Promise<JSX.Element> {
                         <DayEmpty key={i}></DayEmpty>
                     )
                     : null
-
-                },
+                }
                 {
                     monthDays.map(day =>
                         <Day
@@ -43,8 +57,10 @@ export default async function Calendar(): Promise<JSX.Element> {
                     )
                 }
             </div>
-            <footer className="w-full text-center mt-4">
-                Cuando la NASA habilite las imagenes restantes, estas apareceran
+            <footer className="w-full text-center">
+                <p>
+                    Cuando la NASA habilite las imagenes restantes, estas apareceran
+                </p>
             </footer>
         </div>
     );

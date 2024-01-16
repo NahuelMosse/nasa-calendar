@@ -4,7 +4,7 @@ interface HeaderDayProps {
 
 export default function HeaderDay({ children }: HeaderDayProps) {
     return (
-        <div className="w-20 text-center">
+        <div className="max-w-20 text-center">
             {children}
         </div>
     );

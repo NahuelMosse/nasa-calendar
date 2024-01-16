@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import DayWithImage from "./dayWithImage";
 import DaySkeleton from "./daySkeleton";
+import DayWithoutImage from "./dayWithoutImage";
 
 interface DayProps {
     day: Date,
@@ -54,11 +55,11 @@ export default async function Day({ day }: DayProps): Promise<JSX.Element> {
             <Suspense fallback={<DaySkeleton>{day.getDate()}</DaySkeleton>}>
                 {media_type === "image"
                     ? <DayWithImage imageUrl={url}>{day.getDate()}</DayWithImage>
-                    : <DaySkeleton>{day.getDate()}</DaySkeleton>
+                    : <DayWithoutImage>{day.getDate()}</DayWithoutImage>
                 }
             </Suspense>
         );
     } catch (e) {
-        return (<DaySkeleton>{day.getDate()}</DaySkeleton>);
+        return (<DayWithoutImage>{day.getDate()}</DayWithoutImage>);
     }
 }
