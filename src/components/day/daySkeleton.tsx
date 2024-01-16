@@ -5,7 +5,7 @@ interface DaySkeletonProps {
 export default function DaySkeleton({ children }: DaySkeletonProps): JSX.Element {
     return (
         <div
-            className="max-w-20 h-20"
+            className="max-w-20 sm:w-20 h-20"
         >
             <div
                 className="w-full h-full sm:rounded bg-black/20 animate-pulse"
