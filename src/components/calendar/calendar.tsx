@@ -12,7 +12,7 @@ export default function Calendar(): JSX.Element {
     const [monthFirstDay, setMonth] = useState(getCurrentMonthFirstDay());
 
     return (
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col items-center gap-4 h-4/6">
             <CalendarMonthController actualMonth={monthFirstDay} changeMonth={setMonth}></CalendarMonthController>
             <div className="grid grid-cols-7 md:gap-4 sm:gap-2 gap-0">
                 {
@@ -28,11 +28,6 @@ export default function Calendar(): JSX.Element {
                 }
                 <CalendarContent monthFirstDay={monthFirstDay}></CalendarContent>
             </div>
-            <footer className="w-full text-center">
-                <p>
-                    Cuando la NASA habilite las imagenes restantes, estas apareceran
-                </p>
-            </footer>
         </div>
     );
 }

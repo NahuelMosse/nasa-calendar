@@ -6,6 +6,11 @@ export default function Home(): JSX.Element {
         <main className="h-full max-w-3xl flex flex-col gap-8 items-center justify-center">
             <h1 className="text-3xl">APOD Calendar</h1>
             <Calendar></Calendar>
+            <footer className="w-full text-center">
+                <p>
+                    Cuando la NASA habilite las imagenes restantes, estas apareceran
+                </p>
+            </footer>
         </main>
     );
 }
