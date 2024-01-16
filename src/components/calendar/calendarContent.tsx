@@ -45,18 +45,13 @@ export default function CalendarContent({ monthFirstDay }: CalendarDay): JSX.Ele
                             monthImages.map(nasaImage => {
                                 const dayNumber = Number(nasaImage.date.split("-")[2]);
                                 return (
-                                    <>
-                                        {
-                                            <Day
-                                                key={nasaImage.date}
-                                                mediaUrl={nasaImage.url}
-                                                mediaType={nasaImage.media_type}
-                                            >
-                                                {dayNumber}
-                                            </Day>
-                                        }
-                            
-                                    </>
+                                    <Day
+                                        key={"day-" + nasaImage.date}
+                                        mediaUrl={nasaImage.url}
+                                        mediaType={nasaImage.media_type}
+                                    >
+                                        {dayNumber}
+                                    </Day>
                                 );
                             })
                         }

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import CalendarContent from "./calendarContent";
 import CalendarMonthController from "./calendarMonthController";
-import HeaderDay from "./headerDay";
+import HeaderDay from "../day/headerDay";
 import { WeekDays, getCurrentMonthFirstDay } from "@/utils/dateUtils";
 import DayEmpty from "../day/dayEmpty";
 

@@ -1,6 +1,6 @@
 import { NasaImage } from "@/types/NasaImage";
 import { formatDate, getMonthLastDay } from "@/utils/dateUtils";
-import axios, { AxiosError, CanceledError } from "axios";  
+import axios, { CanceledError } from "axios";
 
 export async function getMonthImages(firstMonthDate: Date, abortSignal: AbortSignal): Promise<Array<NasaImage>> {
     const today = new Date();
