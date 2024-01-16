@@ -4,6 +4,9 @@
     "eqeqeq": "error",
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
-    "indent": ["error", 4]
+    "indent": ["error", 4],
+    "no-var": "error",
+    "prefer-const": "error",
+    "no-console": "warn"
   }
 }
