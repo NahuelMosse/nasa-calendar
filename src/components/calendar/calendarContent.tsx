@@ -21,7 +21,7 @@ export default function CalendarContent({ monthFirstDay }: CalendarDay): JSX.Ele
         getMonthImages(monthFirstDay, abortController.signal)
             .then(nasaImages => {
                 setMonthImages(nasaImages);
-                setLoading(false);
+                setLoading(false); 
             })
             .catch(e => {
                 Swal.fire({
