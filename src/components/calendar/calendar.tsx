@@ -12,9 +12,9 @@ export default function Calendar(): JSX.Element {
     const [monthFirstDay, setMonth] = useState(getCurrentMonthFirstDay());
 
     return (
-        <div className="w-full flex flex-col items-center gap-4 h-9/12">
+        <div className="w-full flex flex-col items-center gap-4 sm:h-4/6">
             <CalendarMonthController actualMonth={monthFirstDay} changeMonth={setMonth}></CalendarMonthController>
-            <div className="grid grid-cols-7 md:gap-4 sm:gap-2 gap-0">
+            <div className="grid grid-cols-7 md:gap-4 sm:gap-2 gap-0 h-full">
                 {
                     WeekDays.map(day =>
                         <HeaderDay key={"header-" + day}>{day}</HeaderDay>
