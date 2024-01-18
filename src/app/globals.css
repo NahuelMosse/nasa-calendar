@@ -5,6 +5,9 @@
 @media screen and (min-height: 620px) {
   body {
     height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
   }
 
   html {
@@ -12,8 +15,7 @@
   }
 
   main {
-    height: 100%;
-    justify-content: space-evenly;
+    height: 680px;
   }
 }
 
