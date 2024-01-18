@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import DayEmpty from "./dayEmpty";
 import DayNumber from "./dayNumber";

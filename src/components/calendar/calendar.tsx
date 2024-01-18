@@ -1,19 +1,20 @@
-"use client";
-
-import { useState } from "react";
 import CalendarContent from "./calendarContent";
-import CalendarMonthController from "./calendarMonthController";
 import HeaderDay from "../day/headerDay";
-import { WeekDays, getCurrentMonthFirstDay } from "@/utils/dateUtils";
+import { WeekDays} from "@/utils/dateUtils";
 import DayEmpty from "../day/dayEmpty";
+import { Suspense } from "react";
+import CalendarSkeleton from "./calendarSkeleton";
+import CalendarMonthController from "./calendarMonthController";
 
-export default function Calendar(): JSX.Element {
+interface CalendarProps {
+    monthFirstDay: Date
+}
 
-    const [monthFirstDay, setMonth] = useState(getCurrentMonthFirstDay());
+export default function Calendar({ monthFirstDay }: CalendarProps): JSX.Element {
 
     return (
         <div className="max-w-2xl w-full flex flex-col items-center gap-4 sm:h-5/6">
-            <CalendarMonthController actualMonth={monthFirstDay} changeMonth={setMonth}></CalendarMonthController>
+            <CalendarMonthController monthFirstDay={monthFirstDay}></CalendarMonthController>
             <div className="grid grid-cols-7 sm:gap-4 xs:gap-2 gap-0 h-full auto-rows-min w-full">
                 {
                     WeekDays.map(day =>
@@ -26,7 +27,9 @@ export default function Calendar(): JSX.Element {
                             <DayEmpty key={"empty-" + -(monthFirstDay.getDay()-1-i)}></DayEmpty>
                         )
                 }
-                <CalendarContent monthFirstDay={monthFirstDay}></CalendarContent>
+                <Suspense fallback={<CalendarSkeleton date={monthFirstDay}></CalendarSkeleton>}>
+                    <CalendarContent monthFirstDay={monthFirstDay}></CalendarContent>
+                </Suspense>
             </div>
         </div>
     );

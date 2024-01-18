@@ -2,7 +2,7 @@ import { NasaImage } from "@/types/NasaImage";
 import { formatDate, getMonthLastDay } from "@/utils/dateUtils";
 import axios, { CanceledError } from "axios";
 
-export async function getMonthImages(firstMonthDate: Date, abortSignal: AbortSignal): Promise<Array<NasaImage>> {
+export async function getMonthImages(firstMonthDate: Date): Promise<Array<NasaImage>> {
     const today = new Date();
 
     if (firstMonthDate.getTime() > today.getTime()) {
@@ -25,8 +25,7 @@ export async function getMonthImages(firstMonthDate: Date, abortSignal: AbortSig
                 api_key: process.env.NEXT_PUBLIC_NASA_API_KEY,
                 start_date: stringDate,
                 ...endQueryDate && { end_date: endQueryDate }
-            },
-            signal: abortSignal
+            }
         });
 
         return data;

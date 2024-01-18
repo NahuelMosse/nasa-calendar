@@ -62,3 +62,21 @@ export function getMonthDays(date: Date): Date[] {
     }
     return days;
 }
+
+export function getCalendarControllerLinks(year: number, month: number): string[] {
+    let nextLink: string;
+    let prevLink: string;
+
+    if (month < 12 && month > 1) {
+        nextLink = `/${year}/${month + 1}`;
+        prevLink = `/${year}/${month - 1}`;
+    } else if (month >= 12) {
+        nextLink = `/${year + 1}/1`;
+        prevLink = `/${year}/${month - 1}`;
+    } else {
+        nextLink = `/${year}/${month + 1}`;
+        prevLink = `/${year - 1}/12`;
+    }
+
+    return [nextLink, prevLink];
+}

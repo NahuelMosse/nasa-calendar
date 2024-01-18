@@ -1,43 +1,33 @@
-import { Months, getNextMonthFirstDay, getPrevMonthFirstDay } from "@/utils/dateUtils";
+import { Months, getCalendarControllerLinks } from "@/utils/dateUtils";
+import Link from "next/link";
 
 type CalendarMonthControllerProps = {
-    actualMonth: Date,
-    changeMonth: (firstMonthDay: Date) => void
+    monthFirstDay: Date,
 }
 
-enum actions {
-    "next" = "next",
-    "prev" = "prev"
-}
+export default function CalendarMonthController({ monthFirstDay }: CalendarMonthControllerProps) {
 
-export default function CalendarMonthController({ actualMonth, changeMonth }: CalendarMonthControllerProps) {
-
-    const handleClick = (action: actions): void => {
-        let newDate: Date;
-        if (action === actions["next"]) {
-            newDate = getNextMonthFirstDay(actualMonth);
-        } else {
-            newDate = getPrevMonthFirstDay(actualMonth);
-        }
-
-        changeMonth(newDate);
-    };
+    const year = monthFirstDay.getFullYear();
+    const month = monthFirstDay.getMonth() + 1;
+    const [nextLink, prevLink] = getCalendarControllerLinks(year, month);
 
     return (
         <header className="sm:w-2/4 w-3/4 flex justify-between text-xl">
-            <button onClick={() => handleClick(actions["prev"])}
+            <Link
+                href={prevLink}
                 className="flex items-center justify-center hover:bg-black/10 rounded-full w-8 h-8 rotate-180"
             >
                 ➜
-            </button>
+            </Link>
             <h2 className="text-2xl font-black">
-                {Months[actualMonth.getMonth()] + " " + actualMonth.getFullYear()}
+                {Months[monthFirstDay.getMonth()] + " " + year}
             </h2>
-            <button onClick={() => handleClick(actions["next"])}
+            <Link
+                href={nextLink}
                 className="flex items-center justify-center hover:bg-black/10 rounded-full w-8 h-8"
             >
                 ➜
-            </button>
+            </Link>
         </header>
     );
 }
