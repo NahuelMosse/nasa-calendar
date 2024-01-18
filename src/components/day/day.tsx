@@ -1,5 +1,6 @@
 import Image from "next/image";
 import DayEmpty from "./dayEmpty";
+import DayNumber from "./dayNumber";
 
 interface DayWithImageProps {
     mediaUrl: string,
@@ -10,7 +11,7 @@ interface DayWithImageProps {
 export default function DayWithImage({ children, mediaUrl, mediaType }: DayWithImageProps): JSX.Element {
     return (
         <button
-            className="max-w-20 sm:w-20 h-20 bg-cover"
+            className="max-w-20 sm:w-20 h-20"
         >
             {
                 mediaType === "image"
@@ -24,12 +25,7 @@ export default function DayWithImage({ children, mediaUrl, mediaType }: DayWithI
                     ></Image>
                     :   <DayEmpty></DayEmpty>
             }
-            
-            <div className="relative bottom-3 flex justify-center">
-                <span className="w-5.5 h-5.5 rounded-full bg-black text-white text-sm flex items-center justify-center">
-                    {children}
-                </span>
-            </div>
+            <DayNumber>{children}</DayNumber>
         </button>
     );
 }

@@ -1,5 +1,5 @@
-export const WeekDays = ["Dom.", "Lun.", "Mar.", "Mie.", "Jue.", "Vie.", "Sab."];
-export const Months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+export const WeekDays = ["Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat."];
+export const Months = ["January", "Frebruary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 export function formatDate(date: Date): string {
     let month = "" + (date.getMonth() + 1);

@@ -1,3 +1,5 @@
+import DayNumber from "./dayNumber";
+
 interface DaySkeletonProps {
     children: React.ReactNode
 }
@@ -10,11 +12,7 @@ export default function DaySkeleton({ children }: DaySkeletonProps): JSX.Element
             <div
                 className="w-20 h-20 sm:rounded bg-black/20 animate-pulse"
             ></div>
-            <div className="relative bottom-3 flex justify-center">
-                <span className="w-5.5 h-5.5 rounded-full bg-black text-white text-sm flex items-center justify-center">
-                    {children}
-                </span>
-            </div>
+            <DayNumber>{children}</DayNumber>
         </div>
     );
 }

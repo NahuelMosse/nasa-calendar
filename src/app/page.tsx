@@ -1,14 +1,15 @@
+import Header from "@/components/header/header";
 import Calendar from "../components/calendar/calendar";
 
 export default function Home(): JSX.Element {
 
     return (
-        <main className="h-full max-w-3xl flex flex-col items-center justify-evenly">
-            <h1 className="text-3xl">APOD Calendar</h1>
+        <main className="flex flex-col justify-between gap-4 items-center">
+            <Header title="Calendar"></Header>
             <Calendar></Calendar>
-            <footer className="w-full text-center px-4">
+            <footer className="w-full text-center px-4 bg-black">
                 <p>
-                    Cuando la NASA habilite las imagenes restantes, estas apareceran
+                    @NASA
                 </p>
             </footer>
         </main>
