@@ -20,3 +20,17 @@
 .grey-background {
   background-color: #f1f1f1;
 }
+
+.modal-animation {
+  animation: fade-in 350ms forwards;
+  transition: all 500ms;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}

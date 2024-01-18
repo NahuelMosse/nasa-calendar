@@ -18,6 +18,12 @@ const config: Config = {
             },
             height: {
                 "5.5": "1.375rem",
+            },
+            screens: {
+                "xs": "550px",
+            },
+            maxHeight: {
+                "3/4": "75%",
             }
         },
     },
