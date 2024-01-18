@@ -5,7 +5,7 @@ type CalendarMonthControllerProps = {
     monthFirstDay: Date,
 }
 
-export default function CalendarMonthController({ monthFirstDay }: CalendarMonthControllerProps) {
+export default function CalendarMonthController({ monthFirstDay }: CalendarMonthControllerProps): JSX.Element {
 
     const year = monthFirstDay.getFullYear();
     const month = monthFirstDay.getMonth() + 1;

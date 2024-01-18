@@ -4,7 +4,7 @@ interface HeaderProps {
     title: string
 }
 
-export default function Header({ title }: HeaderProps) {
+export default function Header({ title }: HeaderProps): JSX.Element {
     return (
         <header className="w-full flex flex-col items-center pb-2 pt-1 grey-background">
             <div className="max-w-2xl w-full px-2">

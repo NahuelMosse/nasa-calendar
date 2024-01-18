@@ -9,7 +9,7 @@ const nextConfig = {
                 pathname: "/apod/image/**",
             },
         ],
-    },
+    }
 };
 
 module.exports = nextConfig;

@@ -23,36 +23,6 @@ export function getMonthLastDay(date: Date): Date {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0);
 }
 
-export function getNextMonthFirstDay(date: Date) {
-
-    let year = date.getFullYear();
-    let month = date.getMonth();
-
-    if (month < 11) {
-        month++;
-    } else {
-        month = 0;
-        year++;
-    }
-
-    return new Date(year, month, 1);
-}
-
-export function getPrevMonthFirstDay(date: Date) {
-
-    let year = date.getFullYear();
-    let month = date.getMonth();
-
-    if (month > 0) {
-        month--;
-    } else {
-        month = 11;
-        year--;
-    }
-
-    return new Date(year, month, 1);
-}
-
 export function getMonthDays(date: Date): Date[] {
     const dateToPush = new Date(date.getFullYear(), date.getMonth(), 1);
     const days = [];

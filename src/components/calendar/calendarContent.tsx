@@ -17,8 +17,7 @@ export default async function CalendarContent({ monthFirstDay }: CalendarDay): P
                     return (
                         <Day
                             key={"day-" + nasaImage.date}
-                            mediaUrl={nasaImage.url}
-                            mediaType={nasaImage.media_type}
+                            nasaImage={nasaImage}
                         >
                             {dayNumber}
                         </Day>

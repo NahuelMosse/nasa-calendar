@@ -6,7 +6,8 @@ type CalendarNoContentProps = {
     quantityFilled?: number
 }
 
-export default function CalendarNoContent({ date, quantityFilled }: CalendarNoContentProps) {
+export default function CalendarNoContent({ date, quantityFilled }: CalendarNoContentProps): JSX.Element {
+    // can be greatter
     let monthDays = getMonthDays(date);
 
     if (quantityFilled) {
