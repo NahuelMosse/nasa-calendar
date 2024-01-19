@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import DayEmpty from "./dayEmpty";
 import DayNumber from "./dayNumber";
 import { useState } from "react";
 import DayModal from "./dayModal";
-import { NasaImage } from "@/types/NasaImage";
+import { MediaTypes, NasaImage } from "@/types/NasaImage";
 
 interface DayProps {
     nasaImage: NasaImage,
@@ -18,37 +17,43 @@ export default function Day({ children, nasaImage }: DayProps): JSX.Element {
     const handleClick = () => {
         setShowModal(!showModal);
     };
+
+    const imageProps = nasaImage.media_type === MediaTypes.Image 
+        ? {
+            src: nasaImage.url,
+            fill: true,
+            className: "w-full h-full object-cover",
+            sizes: "80px"
+        }
+        : {
+            src: "/images/youtube_play.png",
+            width: 48,
+            height: 36
+        };
     
     return (
         <>
             <button onClick={handleClick}
                 className="max-w-20 sm:w-20 h-20"
             >
-                <div className="relative w-full h-full">
-                    {
-                        nasaImage.media_type === "image"
-                            ?
-                            <Image
-                                src={nasaImage.url}
-                                alt={"Astronomy Picture of the Day"}
-                                fill
-                                className="w-full h-full sm:rounded"
-                                sizes="80px"
-                                style={{ objectFit: "cover" }}
-                            ></Image>
-                            :   <DayEmpty></DayEmpty>
-                    }
+                <div
+                    className={`
+                        relative w-full h-full flex items-center justify-center overflow-hidden sm:rounded
+                        ${nasaImage.media_type === MediaTypes.Image ? "" : "border"}
+                    `}
+                >
+                    <Image
+                        { ...imageProps }
+                        alt="Astronomy Picture of the Day"
+                    ></Image>
                 </div>
                 <DayNumber>{children}</DayNumber>
             </button>
-            {
-                nasaImage.media_type === "image" &&
-                <DayModal 
-                    closeModal={handleClick}
-                    mediaUrl={nasaImage.hdurl ? nasaImage.hdurl : nasaImage.url}
-                    show={showModal}
-                ></DayModal>
-            }
+            <DayModal 
+                closeModal={handleClick}
+                nasaImage={nasaImage}
+                show={showModal}
+            ></DayModal>
         </>
     );
 }

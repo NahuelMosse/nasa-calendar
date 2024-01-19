@@ -8,3 +8,8 @@ export type NasaImage = {
     title: string,
     url: string
 }
+
+export const MediaTypes = Object.freeze({
+    Image: "image",
+    Video: "video",
+});
