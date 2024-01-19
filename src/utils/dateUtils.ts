@@ -46,10 +46,26 @@ export function getCalendarControllerLinks(year: number, month: number): string[
     return [nextLink, prevLink];
 }
 
-export function getTodayLink() {
+export function getTodayLink(): string {
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth() + 1;
 
     return `/${year}/${month}`;
+}
+
+export function isPathValid(pageParams: { year: string, month: string }): boolean {
+
+    const year = Number(pageParams.year);
+    const month = Number(pageParams.month);
+
+    return (
+        !Number.isNaN(year) &&
+        !Number.isNaN(month) &&
+        Number.isInteger(year) &&
+        Number.isInteger(month) &&
+        year > 1995 &&
+        month >= 1 &&
+        month <= 12
+    );
 }
