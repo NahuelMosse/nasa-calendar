@@ -7,7 +7,7 @@ import Image from "next/image";
 const helvetica = localFont({
     src: [
         {
-            path: "../fonts/HelvLightRegular.ttf",
+            path: "../../public/fonts/HelvLightRegular.ttf",
             weight: "400",
             style: "latin"
         }
@@ -35,7 +35,7 @@ export default function RootLayout({
                         alt={"NASA logo"}
                         width={60}
                         height={60}
-                        className="m-2"
+                        className="m-2 w-auto h-12"
                     ></Image>
                 </footer>
             </body>
