@@ -9,6 +9,15 @@ const nextConfig = {
                 pathname: "/apod/image/**",
             },
         ],
+    },
+    async redirects() {
+        return [
+            {
+                source: "/",
+                destination: "/2024/1",
+                permanent: true,
+            }
+        ];
     }
 };
 

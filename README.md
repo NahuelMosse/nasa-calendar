@@ -1,4 +1,4 @@
-# Welcome to APOD Calendar!
+# Welcome to NASA Calendar!
 This is a calendar made with the APOD (Astronomy picture of the day) in each day as a preview.
 In some cases the picture could be a video.
 You can identify them becase have a default picture.

@@ -14,11 +14,6 @@ export function formatDate(date: Date): string {
     return [year, month, day].join("-");
 }
 
-export function getCurrentMonthFirstDay(): Date {
-    const today = new Date();
-    return new Date(today.getFullYear(), today.getMonth(), 1);
-}
-
 export function getMonthLastDay(date: Date): Date {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0);
 }
@@ -49,4 +44,12 @@ export function getCalendarControllerLinks(year: number, month: number): string[
     }
 
     return [nextLink, prevLink];
+}
+
+export function getTodayLink() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+
+    return `/${year}/${month}`;
 }

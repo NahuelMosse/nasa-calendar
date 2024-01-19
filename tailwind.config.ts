@@ -24,6 +24,10 @@ const config: Config = {
             },
             maxHeight: {
                 "3/4": "75%",
+            },
+            colors: {
+                "nasa-blue": "var(--nasa-blue)",
+                "nasa-red": "var(--nasa-red)"
             }
         },
     },
