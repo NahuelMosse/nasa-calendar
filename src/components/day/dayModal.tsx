@@ -12,8 +12,10 @@ export default function DayModal({ show, nasaImage, closeModal }: DayModalProps)
         <>
             {
                 show &&
-                <div className="absolute bottom-0 left-0 w-full h-full flex flex-col items-center justify-center z-20 modal-animation bg-black/50">
-                    <div className="relative flex items-start top-5">
+                <div
+                    className="absolute bottom-0 left-0 w-full h-full flex flex-col items-center justify-center z-20 modal-animation bg-black/50"
+                >
+                    <div className="relative flex items-start md:top-4 top-6">
                         <button onClick={closeModal}
                             className="w-8 h-8 rounded-full bg-black text-white text-lg flex items-center justify-center"
                         >
@@ -22,8 +24,7 @@ export default function DayModal({ show, nasaImage, closeModal }: DayModalProps)
                     </div>
                     {
                         nasaImage.media_type === MediaTypes.Image
-                            ? 
-                            <Image
+                            ? <Image
                                 src={nasaImage.hdurl ? nasaImage.hdurl : nasaImage.url}
                                 alt={"Astronomy Picture of the Day"}
                                 width={1000}

@@ -25,7 +25,6 @@
 
 .modal-animation {
   animation: fade-in 350ms forwards;
-  transition: all 500ms;
 }
 
 @keyframes fade-in {

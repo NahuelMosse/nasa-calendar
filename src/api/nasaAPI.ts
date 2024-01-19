@@ -22,7 +22,7 @@ export async function getMonthImages(firstMonthDate: Date): Promise<Array<NasaIm
     try {
         const { data } = await axios.get<NasaImage[]>("https://api.nasa.gov/planetary/apod", {
             params: {
-                api_key: process.env.NEXT_PUBLIC_NASA_API_KEY,
+                api_key: process.env.NASA_API_KEY,
                 start_date: stringDate,
                 ...endQueryDate && { end_date: endQueryDate }
             }
