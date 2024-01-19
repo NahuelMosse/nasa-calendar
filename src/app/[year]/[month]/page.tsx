@@ -1,4 +1,4 @@
-import Custom404 from "@/app/not-found";
+import NotFoundPage from "@/app/not-found";
 import Calendar from "@/components/calendar/calendar";
 import { isPathValid } from "@/utils/dateUtils";
 
@@ -21,6 +21,6 @@ export default function MonthPage({ params }: MonthPageProps): JSX.Element {
     }
 
     return (
-        <Custom404></Custom404>
+        <NotFoundPage></NotFoundPage>
     );
 }

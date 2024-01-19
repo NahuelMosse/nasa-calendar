@@ -1,7 +1,7 @@
 import { getTodayLink } from "@/utils/dateUtils";
 import Link from "next/link";
 
-export default function Custom404(): JSX.Element {
+export default function NotFoundPage(): JSX.Element {
 
     return (
         <main className="flex flex-col justify-between gap-4 items-center">
