@@ -17,19 +17,6 @@ export default function Day({ children, nasaImage }: DayProps): JSX.Element {
     const handleClick = () => {
         setShowModal(!showModal);
     };
-
-    const imageProps = nasaImage.media_type === MediaTypes.Image 
-        ? {
-            src: nasaImage.url,
-            fill: true,
-            className: "w-full h-full object-cover",
-            sizes: "80px"
-        }
-        : {
-            src: "/images/youtube_play.png",
-            width: 48,
-            height: 36
-        };
     
     return (
         <>
@@ -37,13 +24,14 @@ export default function Day({ children, nasaImage }: DayProps): JSX.Element {
                 className="max-w-20 sm:w-20 h-20"
             >
                 <div
-                    className={`
-                        relative w-full h-full flex items-center justify-center overflow-hidden sm:rounded
-                        ${nasaImage.media_type === MediaTypes.Image ? "" : "border"}
-                    `}
+                    className="relative w-full h-full flex items-center justify-center overflow-hidden sm:rounded"
+                    title={nasaImage.media_type === MediaTypes.Image ? "Click to see the image in a bigger size" : "Click to show the video"}
                 >
                     <Image
-                        { ...imageProps }
+                        src={nasaImage.media_type === MediaTypes.Image ? nasaImage.url : "/images/APOD_Logo.jpg"}
+                        fill
+                        className="w-full h-full object-cover"
+                        sizes="80px"
                         alt="Astronomy Picture of the Day"
                     ></Image>
                 </div>
