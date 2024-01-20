@@ -17,7 +17,7 @@ export default function NoContentDaysGenerator({ date, quantityFilled }: NoConte
         <>
             {
                 monthDays.map(day =>
-                    <DayWithoutImage key={"no-content-" + formatDate(day)}>{day.getDate()}</DayWithoutImage>
+                    <DayWithoutImage key={formatDate(day)}>{day.getDate()}</DayWithoutImage>
                 )
             }
         </>

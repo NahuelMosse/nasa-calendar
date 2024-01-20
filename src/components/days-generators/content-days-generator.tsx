@@ -13,7 +13,7 @@ export default function ContentDaysGenerator({ monthImages }: ContentDaysGenerat
                     const dayNumber = Number(nasaImage.date.split("-")[2]);
                     return (
                         <Day
-                            key={"day-" + nasaImage.date}
+                            key={nasaImage.date}
                             nasaImage={nasaImage}
                         >
                             {dayNumber}

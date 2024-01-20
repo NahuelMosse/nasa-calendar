@@ -9,8 +9,8 @@ export default function EmptyDaysGenerator({ monthFirstDay }: EmptyDaysGenerator
         <>
             {
                 monthFirstDay.getDay() > 0 &&
-                    Array(monthFirstDay.getDay()).fill(null).map((_, i) => 
-                        <DayEmpty key={"empty-" + -(monthFirstDay.getDay()-1-i)}></DayEmpty>
+                    Array(monthFirstDay.getDay()).fill(null).map(() => 
+                        <DayEmpty key={monthFirstDay.getDay()}></DayEmpty>
                     )
             }
         </>

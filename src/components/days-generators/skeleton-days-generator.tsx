@@ -12,7 +12,7 @@ export default function SkeletonDaysGenerator({ monthFirstDay }: SkeletonDaysGen
         <>
             {
                 monthDays.map(day =>
-                    <DaySkeleton key={"skeleton-" + formatDate(day)}>{day.getDate()}</DaySkeleton>
+                    <DaySkeleton key={formatDate(day)}>{day.getDate()}</DaySkeleton>
                 )
             }
         </>

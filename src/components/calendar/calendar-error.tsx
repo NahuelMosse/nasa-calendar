@@ -12,7 +12,7 @@ export default function CalendarError({ date }: CalendarNoContentProps): JSX.Ele
         <>
             {
                 monthDays.map(day =>
-                    <DayWithoutImage key={"no-content-" + formatDate(day)}>{day.getDate()}</DayWithoutImage>
+                    <DayWithoutImage key={formatDate(day)}>{day.getDate()}</DayWithoutImage>
                 )
             }
         </>

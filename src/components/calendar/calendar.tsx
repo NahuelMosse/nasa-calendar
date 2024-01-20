@@ -17,7 +17,7 @@ export default function Calendar({ monthFirstDay }: CalendarProps): JSX.Element 
             <div className="grid grid-cols-7 sm:gap-4 xs:gap-2 gap-0 h-full auto-rows-min w-full">
                 {
                     WeekDays.map(day =>
-                        <HeaderDay key={"header-" + day}>{day}</HeaderDay>
+                        <HeaderDay key={day}>{day}</HeaderDay>
                     )
                 }
                 
