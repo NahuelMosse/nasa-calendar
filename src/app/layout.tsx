@@ -15,7 +15,7 @@ const helvetica = localFont({
 });
 
 export const metadata: Metadata = {
-    title: "Calendario APOD",
+    title: "NASA Calendar",
     description: "A calendar made with the picture of the day in each day",
     icons: {
         icon: "/images/favicon.ico"
