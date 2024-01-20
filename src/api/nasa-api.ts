@@ -1,5 +1,5 @@
-import { NasaImage } from "@/types/NasaImage";
-import { formatDate, getMonthLastDay } from "@/utils/dateUtils";
+import { NasaImage } from "@/types/nasa-image";
+import { formatDate, getMonthLastDay } from "@/utils/date-utils";
 import axios from "axios";
 
 export async function getMonthImages(firstMonthDate: Date): Promise<Array<NasaImage>> {

@@ -1,4 +1,4 @@
-import { getTodayLink } from "@/utils/dateUtils";
+import { getTodayLink } from "@/utils/date-utils";
 import Link from "next/link";
 
 export default function NotFoundPage(): JSX.Element {
@@ -28,7 +28,6 @@ export default function NotFoundPage(): JSX.Element {
                     Go to the calendar
                 </Link>
             </div>
-            
         </main>
     );
 }

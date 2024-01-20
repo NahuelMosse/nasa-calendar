@@ -1,4 +1,4 @@
-import { MediaTypes, NasaImage } from "@/types/NasaImage";
+import { MediaTypes, NasaImage } from "@/types/nasa-image";
 import Image from "next/image";
 
 interface DayModalProps {

@@ -1,4 +1,4 @@
-import { getTodayLink } from "@/utils/dateUtils";
+import { getTodayLink } from "@/utils/date-utils";
 import Image from "next/image";
 import Link from "next/link";
 

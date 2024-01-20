@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import DayNumber from "./dayNumber";
+import DayNumber from "./day-number";
 import { useState } from "react";
-import DayModal from "./dayModal";
-import { MediaTypes, NasaImage } from "@/types/NasaImage";
+import DayModal from "./day-modal";
+import { MediaTypes, NasaImage } from "@/types/nasa-image";
 
 interface DayProps {
     nasaImage: NasaImage,

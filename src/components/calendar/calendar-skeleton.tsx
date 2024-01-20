@@ -1,5 +1,5 @@
-import { formatDate, getMonthDays } from "@/utils/dateUtils";
-import DaySkeleton from "../day/daySkeleton";
+import { formatDate, getMonthDays } from "@/utils/date-utils";
+import DaySkeleton from "../day/day-skeleton";
 
 type CalendarNoContentProps = {
     date: Date

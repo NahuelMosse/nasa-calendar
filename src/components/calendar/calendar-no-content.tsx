@@ -1,5 +1,5 @@
-import { formatDate, getMonthDays } from "@/utils/dateUtils";
-import DayWithoutImage from "../day/dayWithoutImage";
+import { formatDate, getMonthDays } from "@/utils/date-utils";
+import DayWithoutImage from "../day/day-without-image";
 
 type CalendarNoContentProps = {
     date: Date,

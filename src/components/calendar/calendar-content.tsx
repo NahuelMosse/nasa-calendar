@@ -1,6 +1,7 @@
-import { getMonthImages } from "@/api/nasaAPI";
-import CalendarNoContent from "./calendarNoContent";
+import { getMonthImages } from "@/api/nasa-api";
+import CalendarNoContent from "./calendar-no-content";
 import Day from "../day/day";
+import CalendarError from "./calendar-error";
 
 type CalendarDay = {
     monthFirstDay: Date
@@ -29,6 +30,10 @@ export default async function CalendarContent({ monthFirstDay }: CalendarDay): P
             </>
         );
     } catch(error: unknown) {
-        return <CalendarNoContent date={monthFirstDay} quantityFilled={0}></CalendarNoContent>;
+        return (
+            <CalendarError
+                date={monthFirstDay}
+            ></CalendarError>
+        );
     }
 }

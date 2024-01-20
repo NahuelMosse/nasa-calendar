@@ -1,6 +1,6 @@
 import NotFoundPage from "@/app/not-found";
 import Calendar from "@/components/calendar/calendar";
-import { isPathValid } from "@/utils/dateUtils";
+import { isPathValid } from "@/utils/date-utils";
 
 interface MonthPageProps {
     params: { year: string, month: string }

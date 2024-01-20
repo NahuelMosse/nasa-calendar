@@ -1,4 +1,4 @@
-import { Months, getCalendarControllerLinks } from "@/utils/dateUtils";
+import { Months, getCalendarControllerLinks } from "@/utils/date-utils";
 import Link from "next/link";
 
 type CalendarMonthControllerProps = {

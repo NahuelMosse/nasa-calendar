@@ -1,10 +1,10 @@
-import CalendarContent from "./calendarContent";
-import HeaderDay from "../day/headerDay";
-import { WeekDays} from "@/utils/dateUtils";
-import DayEmpty from "../day/dayEmpty";
+import CalendarContent from "./calendar-content";
+import HeaderDay from "../day/header-day";
+import { WeekDays} from "@/utils/date-utils";
+import DayEmpty from "../day/day-empty";
 import { Suspense } from "react";
-import CalendarSkeleton from "./calendarSkeleton";
-import CalendarMonthController from "./calendarMonthController";
+import CalendarSkeleton from "./calendar-skeleton";
+import CalendarMonthController from "./calendar-month-controller";
 
 interface CalendarProps {
     monthFirstDay: Date
