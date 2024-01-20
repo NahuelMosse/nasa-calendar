@@ -7,9 +7,9 @@ interface CalendarNoContentProps {
 
 export default function CalendarSkeleton({ monthFirstDay }: CalendarNoContentProps): JSX.Element {
     return (
-        <>
+        <div className="grid grid-cols-7 sm:gap-4 xs:gap-2 gap-0 h-full auto-rows-min w-full">
             <EmptyDaysGenerator monthFirstDay={monthFirstDay}></EmptyDaysGenerator>
             <SkeletonDaysGenerator monthFirstDay={monthFirstDay}></SkeletonDaysGenerator>
-        </>
+        </div>
     );
 }

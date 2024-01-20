@@ -13,16 +13,16 @@ export default async function CalendarContent({ monthFirstDay }: CalendarDayProp
         const monthImages = await getMonthImages(monthFirstDay);
 
         return (
-            <>
+            <div className="grid grid-cols-7 sm:gap-4 xs:gap-2 gap-0 h-full auto-rows-min w-full">
                 <EmptyDaysGenerator monthFirstDay={monthFirstDay}></EmptyDaysGenerator>
                 <ContentDaysGenerator monthImages={monthImages}></ContentDaysGenerator>
                 <NoContentDaysGenerator date={monthFirstDay} quantityFilled={monthImages.length}></NoContentDaysGenerator>
-            </>
+            </div>
         );
-    } catch(error: unknown) {
+    } catch(error: any) {
         return (
             <CalendarError
-                date={monthFirstDay}
+                error={error}
             ></CalendarError>
         );
     }

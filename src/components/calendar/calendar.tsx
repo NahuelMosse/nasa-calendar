@@ -14,7 +14,7 @@ export default function Calendar({ monthFirstDay }: CalendarProps): JSX.Element 
     return (
         <div className="max-w-2xl w-full flex flex-col items-center gap-4 sm:h-5/6">
             <CalendarMonthController monthFirstDay={monthFirstDay}></CalendarMonthController>
-            <div className="grid grid-cols-7 sm:gap-4 xs:gap-2 gap-0 h-full auto-rows-min w-full">
+            <div className="grid grid-cols-7 sm:gap-4 xs:gap-2 gap-0 auto-rows-min w-full">
                 {
                     WeekDays.map(day =>
                         <HeaderDay key={day}>{day}</HeaderDay>
@@ -22,11 +22,9 @@ export default function Calendar({ monthFirstDay }: CalendarProps): JSX.Element 
                 }
                 
             </div>
-            <div className="grid grid-cols-7 sm:gap-4 xs:gap-2 gap-0 h-full auto-rows-min w-full">
-                <Suspense fallback={<CalendarSkeleton monthFirstDay={monthFirstDay}></CalendarSkeleton>}>
-                    <CalendarContent monthFirstDay={monthFirstDay}></CalendarContent>
-                </Suspense>
-            </div>
+            <Suspense fallback={<CalendarSkeleton monthFirstDay={monthFirstDay}></CalendarSkeleton>}>
+                <CalendarContent monthFirstDay={monthFirstDay}></CalendarContent>
+            </Suspense>
         </div>
     );
 }
