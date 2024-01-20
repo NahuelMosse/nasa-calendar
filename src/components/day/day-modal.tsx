@@ -30,7 +30,7 @@ export default function DayModal({ show, nasaImage, closeModal }: DayModalProps)
                                 width={1000}
                                 height={1000}
                                 quality={100}
-                                className="sm:rounded p-2 md:bg-white bg-transparent rounded w-auto max-w-full max-h-3/4"
+                                className="sm:rounded p-2 md:bg-white bg-transparent rounded max-w-full max-h-3/4"
                             ></Image>
                             : <iframe
                                 className="aspect-video md:w-3/4 w-full p-2 md:bg-white bg-transparent rounded"
