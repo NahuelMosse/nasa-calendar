@@ -1,7 +1,6 @@
 import CalendarContent from "./calendar-content";
 import HeaderDay from "../day/header-day";
 import { WeekDays} from "@/utils/date-utils";
-import DayEmpty from "../day/day-empty";
 import { Suspense } from "react";
 import CalendarSkeleton from "./calendar-skeleton";
 import CalendarMonthController from "./calendar-month-controller";
@@ -21,13 +20,10 @@ export default function Calendar({ monthFirstDay }: CalendarProps): JSX.Element 
                         <HeaderDay key={"header-" + day}>{day}</HeaderDay>
                     )
                 }
-                {
-                    monthFirstDay.getDay() > 0 &&
-                        Array(monthFirstDay.getDay()).fill(null).map((_, i) => 
-                            <DayEmpty key={"empty-" + -(monthFirstDay.getDay()-1-i)}></DayEmpty>
-                        )
-                }
-                <Suspense fallback={<CalendarSkeleton date={monthFirstDay}></CalendarSkeleton>}>
+                
+            </div>
+            <div className="grid grid-cols-7 sm:gap-4 xs:gap-2 gap-0 h-full auto-rows-min w-full">
+                <Suspense fallback={<CalendarSkeleton monthFirstDay={monthFirstDay}></CalendarSkeleton>}>
                     <CalendarContent monthFirstDay={monthFirstDay}></CalendarContent>
                 </Suspense>
             </div>

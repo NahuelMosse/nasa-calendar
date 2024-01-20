@@ -1,19 +1,15 @@
-import { formatDate, getMonthDays } from "@/utils/date-utils";
-import DaySkeleton from "../day/day-skeleton";
+import EmptyDaysGenerator from "../days-generators/empty-days-generator";
+import SkeletonDaysGenerator from "../days-generators/skeleton-days-generator";
 
-type CalendarNoContentProps = {
-    date: Date
+interface CalendarNoContentProps {
+    monthFirstDay: Date
 }
 
-export default function CalendarSkeleton({ date }: CalendarNoContentProps): JSX.Element {
-    const monthDays = getMonthDays(date);
+export default function CalendarSkeleton({ monthFirstDay }: CalendarNoContentProps): JSX.Element {
     return (
         <>
-            {
-                monthDays.map(day =>
-                    <DaySkeleton key={"skeleton-" + formatDate(day)}>{day.getDate()}</DaySkeleton>
-                )
-            }
+            <EmptyDaysGenerator monthFirstDay={monthFirstDay}></EmptyDaysGenerator>
+            <SkeletonDaysGenerator monthFirstDay={monthFirstDay}></SkeletonDaysGenerator>
         </>
     );
 }

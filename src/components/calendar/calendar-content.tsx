@@ -1,32 +1,22 @@
 import { getMonthImages } from "@/api/nasa-api";
-import CalendarNoContent from "./calendar-no-content";
-import Day from "../day/day";
+import NoContentDaysGenerator from "../days-generators/no-content-days-generator";
 import CalendarError from "./calendar-error";
+import EmptyDaysGenerator from "../days-generators/empty-days-generator";
+import ContentDaysGenerator from "../days-generators/content-days-generator";
 
-type CalendarDay = {
+interface CalendarDayProps {
     monthFirstDay: Date
 }
 
-export default async function CalendarContent({ monthFirstDay }: CalendarDay): Promise<JSX.Element> {
+export default async function CalendarContent({ monthFirstDay }: CalendarDayProps): Promise<JSX.Element> {
     try {
         const monthImages = await getMonthImages(monthFirstDay);
 
         return (
             <>
-                {
-                    monthImages.map(nasaImage => {
-                        const dayNumber = Number(nasaImage.date.split("-")[2]);
-                        return (
-                            <Day
-                                key={"day-" + nasaImage.date}
-                                nasaImage={nasaImage}
-                            >
-                                {dayNumber}
-                            </Day>
-                        );
-                    })
-                }
-                <CalendarNoContent date={monthFirstDay} quantityFilled={monthImages.length}></CalendarNoContent>
+                <EmptyDaysGenerator monthFirstDay={monthFirstDay}></EmptyDaysGenerator>
+                <ContentDaysGenerator monthImages={monthImages}></ContentDaysGenerator>
+                <NoContentDaysGenerator date={monthFirstDay} quantityFilled={monthImages.length}></NoContentDaysGenerator>
             </>
         );
     } catch(error: unknown) {

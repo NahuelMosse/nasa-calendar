@@ -1,5 +1,6 @@
 import { MediaTypes, NasaImage } from "@/types/nasa-image";
 import Image from "next/image";
+import { SyntheticEvent } from "react";
 
 interface DayModalProps {
     show: boolean,
@@ -7,7 +8,7 @@ interface DayModalProps {
     closeModal: () => void
 }
 
-export default function DayModal({ show, nasaImage, closeModal }: DayModalProps) {
+export default function DayModal({ show, nasaImage, closeModal }: DayModalProps): JSX.Element {
     return (
         <>
             {
@@ -30,8 +31,13 @@ export default function DayModal({ show, nasaImage, closeModal }: DayModalProps)
                                 width={1000}
                                 height={1000}
                                 quality={100}
-                                className="sm:rounded p-2 md:bg-white bg-transparent rounded max-w-full max-h-3/4"
-                                onLoadingComplete={(image) => image.classList.add("w-auto")}
+                                className="sm:rounded md:p-1 p-2 md:bg-white bg-transparent rounded max-w-full max-h-3/4"
+                                onLoad={(e: SyntheticEvent<HTMLImageElement, Event>) => {
+                                    const imageElement = e.target as HTMLImageElement;
+                                    if (imageElement) {
+                                        imageElement.classList.add("w-auto");
+                                    }
+                                }}
                             ></Image>
                             : <iframe
                                 className="aspect-video md:w-3/4 w-full p-2 md:bg-white bg-transparent rounded"

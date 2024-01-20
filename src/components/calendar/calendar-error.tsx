@@ -1,7 +1,7 @@
 import { formatDate, getMonthDays } from "@/utils/date-utils";
 import DayWithoutImage from "../day/day-without-image";
 
-type CalendarNoContentProps = {
+interface CalendarNoContentProps {
     date: Date
 }
 

@@ -1,12 +1,12 @@
 import { formatDate, getMonthDays } from "@/utils/date-utils";
 import DayWithoutImage from "../day/day-without-image";
 
-type CalendarNoContentProps = {
+interface NoContentDaysGeneratorProps {
     date: Date,
     quantityFilled?: number
 }
 
-export default function CalendarNoContent({ date, quantityFilled }: CalendarNoContentProps): JSX.Element {
+export default function NoContentDaysGenerator({ date, quantityFilled }: NoContentDaysGeneratorProps): JSX.Element {
     const monthDays = getMonthDays(date);
 
     if (quantityFilled) {

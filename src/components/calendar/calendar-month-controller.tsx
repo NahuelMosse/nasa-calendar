@@ -1,7 +1,7 @@
 import { Months, getCalendarControllerLinks } from "@/utils/date-utils";
 import Link from "next/link";
 
-type CalendarMonthControllerProps = {
+interface CalendarMonthControllerProps {
     monthFirstDay: Date,
 }
 
