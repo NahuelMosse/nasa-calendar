@@ -11,7 +11,10 @@ export default function Header({ title }: HeaderProps): JSX.Element {
         <header className="w-full flex flex-col items-center pb-2 pt-1 grey-background">
             <div className="max-w-2xl w-full px-2">
                 <div className="flex gap-1 items-center">
-                    <Link href={getTodayLink()}>
+                    <Link
+                        href={getTodayLink()}
+                        aria-label="Go to main page"
+                    >
                         <Image
                             src="/images/NASA_logotype.svg"
                             alt={""}
