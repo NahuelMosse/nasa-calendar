@@ -7,11 +7,10 @@ type CalendarNoContentProps = {
 }
 
 export default function CalendarNoContent({ date, quantityFilled }: CalendarNoContentProps): JSX.Element {
-    // can be greatter
-    let monthDays = getMonthDays(date);
+    const monthDays = getMonthDays(date);
 
     if (quantityFilled) {
-        monthDays = monthDays.slice(quantityFilled, monthDays.length);
+        monthDays.splice(0, quantityFilled);
     }
 
     return (

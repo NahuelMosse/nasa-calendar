@@ -16,7 +16,10 @@ const helvetica = localFont({
 
 export const metadata: Metadata = {
     title: "Calendario APOD",
-    description: "A calendar made with the picture of the day in each day"
+    description: "A calendar made with the picture of the day in each day",
+    icons: {
+        icon: "/images/favicon.ico"
+    },
 };
 
 export default function RootLayout({
@@ -31,7 +34,7 @@ export default function RootLayout({
                 {children}
                 <footer className="w-full text-center px-4 bg-black flex justify-center">
                     <Image
-                        src="/images/NASA_logo.svg"
+                        src="/images/nasa_logo.svg"
                         alt={"NASA logo"}
                         width={60}
                         height={60}

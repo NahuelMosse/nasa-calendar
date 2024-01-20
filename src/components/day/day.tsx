@@ -28,7 +28,7 @@ export default function Day({ children, nasaImage }: DayProps): JSX.Element {
                     title={nasaImage.media_type === MediaTypes.Image ? "Click to see the image in a bigger size" : "Click to show the video"}
                 >
                     <Image
-                        src={nasaImage.media_type === MediaTypes.Image ? nasaImage.url : "/images/APOD_Logo.jpg"}
+                        src={nasaImage.media_type === MediaTypes.Image ? nasaImage.url : "/images/APOD_logo.jpg"}
                         fill
                         className="w-full h-full object-cover"
                         sizes="80px"

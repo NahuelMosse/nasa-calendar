@@ -16,7 +16,7 @@ export default function Header({ title }: HeaderProps): JSX.Element {
                         aria-label="Go to main page"
                     >
                         <Image
-                            src="/images/NASA_logotype.svg"
+                            src="/images/nasa_logotype.svg"
                             alt={""}
                             width={100}
                             height={28}

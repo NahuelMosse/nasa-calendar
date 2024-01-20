@@ -30,7 +30,6 @@ const config: Config = {
                 "nasa-red": "var(--nasa-red)"
             }
         },
-    },
-    plugins: [],
+    }
 };
 export default config;
