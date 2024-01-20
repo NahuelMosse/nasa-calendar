@@ -28,7 +28,7 @@ If you are developer go to For developers else go to For everyone instead
 
 ## For everyone
 - Start the project with:
-`npm run build & npm run start`
+`npm run build; npm run start`
 When the command ends, go to http://localhost:3000/ to see the page
 
 ## For developers
